@@ -1,16 +1,11 @@
-from itertools import combinations
+from itertools import permutations
 
-S, K = input().split()
-K = int(K)
+S, K  = input().split()
+list = list(permutations(S, int(K)))
+list.sort()
 
-for a in range(1,K+1) :
-    l = list(combinations(S, a))
-    resultList = []
-    l.sort()
-
-    for i in l:
-        s = ''
-        for j in i:
-            s += j
-        resultList.append(''.join(sorted(s)))
-    print('\n'.join(sorted(resultList)))
+for i in list:
+    s = ''
+    for j in i:
+        s += j
+    print(s)
