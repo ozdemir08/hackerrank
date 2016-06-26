@@ -1,5 +1,5 @@
 from collections import OrderedDict
-
+#dictionary that holds keys according to first insertion time
 N = int(input())
 
 ordered_dict = OrderedDict()
