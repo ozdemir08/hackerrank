@@ -1,5 +1,5 @@
 from itertools import combinations
-
+# combinations(A,b) returns the b combinations of A list
 S, K = input().split()
 K = int(K)
 

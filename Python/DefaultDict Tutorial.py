@@ -1,5 +1,5 @@
 from collections import defaultdict
-
+# default dict provides to map a key to multiple values
 d = defaultdict(list)
 (N, M) = tuple(map(int,input().split()))
 

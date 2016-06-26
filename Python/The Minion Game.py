@@ -1,5 +1,5 @@
 vowels = {'A':1,'E':1,'I':1,'O':1,'U':1}
-
+#definition of a dict
 string = input()
 N = len(string)
 

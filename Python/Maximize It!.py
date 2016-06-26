@@ -1,5 +1,5 @@
 from itertools import product
-
+#cartesian product of lists in a list
 (N, K) = map(int,input().split())
 lists = []
 
