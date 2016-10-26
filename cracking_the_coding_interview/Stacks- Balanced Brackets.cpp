@@ -26,16 +26,19 @@ using namespace std;
 int pos;
 
 bool is_balanced(string expression) {
-    cout << pos << ' ' << expression << endl;
-    if (pos >= expression.length()) return true;
-    char c = expression[pos++];
-    if(!is_balanced(expression.substr(pos)))
-        return false;
-    if( pos < expression.length() && ((c == '(' && expression[pos] == ')') || (expression[pos] - c == 2) ))
-        return true;
-    pos++;
-    return false;
 
+    if (expression[pos] == ')' || expression[pos] == ']' || expression[pos] == '}')
+         return false;
+    char c = expression[pos++];
+    while(pos < expression.length() && (expression[pos] == '{' || expression[pos] == '[' || expression[pos] == '('))
+        if(!is_balanced(expression))
+            return false;
+
+    if(pos < expression.length() && ((c == '(' && expression[pos] == ')') || (c == '[' && expression[pos] == ']') || (c == '{' && expression[pos] == '}'))){
+        pos++;
+        return true;
+    }
+    return false;
 }
 
 int main(){
@@ -45,7 +48,10 @@ int main(){
         string expression;
         cin >> expression;
         pos = 0;
-        bool answer = is_balanced(expression);
+        bool answer = true;
+        while(pos < expression.length() && answer)
+            answer &= is_balanced(expression);
+
         if(answer)
             cout << "YES\n";
         else cout << "NO\n";
