@@ -21,8 +21,8 @@ class Graph {
         }
     
         vector<int> shortest_reach(int start) {
-            std::vector<bool> marked(n);
-            std::vector<int> distance(n);
+            vector<bool> marked(n);
+            vector<int> distance(n);
             queue<int> q;
             q.push(start);
             while(!q.empty()){
