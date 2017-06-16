@@ -24,7 +24,6 @@ void read(){
 }
 
 void dfs(int x){
-	// cout << x << ' ' << groupNumber << endl;
 	group[x] = groupNumber;
 	for(int i=0;i<adj[x].size();i++){
 		int next = adj[x][i];
@@ -59,7 +58,4 @@ int main(){
 
 	transform();
 	cout << fillDP(1, M) << endl;
-	// for(int i=1;i<=M;i++, cout << endl)
-	// 	for(int j=1;j<=M;j++)
-	// 		cout << DP[i][j] << ' ';
 }
